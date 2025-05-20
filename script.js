@@ -34,28 +34,28 @@ const actualizarResultadoExtraordinario = () => {
 const actualizarTotal = () => {
     const totalito = sumar(actualizarResultadoSimple(),actualizarResultadoExtraordinario());
     total.innerHTML = `
-        <p>Total a cobrar ${totalito}</p>
+        <p>Total a cobrar $${totalito}</p>
     `
 }
 
 moduloSimple.addEventListener('change', (e) => {
-    valorModuloSimple = parseFloat(e.target.value) || 0;
+    valorModuloSimple = e.target.value || 0;
     actualizarResultadoSimple();
 });
 
 serviciosSimples.addEventListener('change', (e) => {
-    cantidadServiciosSimple = parseInt(e.target.value) || 0;
+    cantidadServiciosSimple = e.target.value || 0;
     actualizarResultadoSimple();
     actualizarTotal();
 });
 
 moduloExtraordinario.addEventListener('change', (e) => {
-    valorModuloExtraordinario = parseFloat(e.target.value) || 0;
+    valorModuloExtraordinario = e.target.value || 0;
     actualizarResultadoExtraordinario();
 })
 
 serviciosExtraordinarios.addEventListener('change', (e) => {
-    cantidadServiciosExtraordinarios = parseInt(e.target.value) || 0;
+    cantidadServiciosExtraordinarios = e.target.value || 0;
     actualizarResultadoExtraordinario();
     actualizarTotal();
 });
