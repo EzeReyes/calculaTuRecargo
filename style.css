@@ -1,0 +1,40 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+        background: radial-gradient(circle, bisque, darkslateblue);
+}
+
+.section {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    gap: 50px;
+    margin: 20px;
+    font-size: 20px;
+}
+
+.titulo {
+    text-align: center;
+    padding: 50px;
+}
+
+@media (min-width: 344px) and (max-width: 650px) {
+
+    .section {
+        flex-direction: column;
+    }
+
+    .div {
+        font-size: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+}
