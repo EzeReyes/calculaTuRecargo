@@ -5,8 +5,8 @@ const serviciosExtraordinarios = document.querySelector('#servicios-modulo-extra
 const modSRealizados = document.querySelector('.modS-realizados');
 const  modERealizados = document.querySelector('.modE-realizados');
 const total = document.querySelector('.total');
-let valorModuloSimple = 10.948;
-let valorModuloExtraordinario = 21.896;
+let valorModuloSimple = 10948;
+let valorModuloExtraordinario = 21896;
 let cantidadServiciosSimple = 0;
 let cantidadServiciosExtraordinarios = 0;
 
