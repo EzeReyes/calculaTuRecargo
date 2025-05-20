@@ -3,14 +3,13 @@ const moduloExtraordinario = document.querySelector('#modulo-extra');
 const serviciosSimples = document.querySelector('#servicios-modulo-simple');
 const serviciosExtraordinarios = document.querySelector('#servicios-modulo-extra');
 const modSRealizados = document.querySelector('.modS-realizados');
-const  modERealizados = document.querySelector('.modE-realizados');
+const modERealizados = document.querySelector('.modE-realizados');
 const total = document.querySelector('.total');
-let valorModuloSimple = 10948;
-let valorModuloExtraordinario = 21896;
+
+let valorModuloSimple = Number(moduloSimple.value) || 0;
+let valorModuloExtraordinario = Number(moduloExtraordinario.value) || 0;
 let cantidadServiciosSimple = 0;
 let cantidadServiciosExtraordinarios = 0;
-
-
 
 const multiplicar = (a, b) => a * b;
 const sumar = (a, b) => a + b;
@@ -32,31 +31,36 @@ const actualizarResultadoExtraordinario = () => {
 };
 
 const actualizarTotal = () => {
-    const totalito = sumar(actualizarResultadoSimple(),actualizarResultadoExtraordinario());
+    const totalito = sumar(actualizarResultadoSimple(), actualizarResultadoExtraordinario());
     total.innerHTML = `
         <p>Total a cobrar $${totalito}</p>
-    `
-}
+    `;
+};
 
 moduloSimple.addEventListener('change', (e) => {
-    valorModuloSimple = e.target.value || 0;
+    valorModuloSimple = Number(e.target.value) || 0;
     actualizarResultadoSimple();
+    actualizarTotal();
 });
 
 serviciosSimples.addEventListener('change', (e) => {
-    cantidadServiciosSimple = e.target.value || 0;
+    cantidadServiciosSimple = Number(e.target.value) || 0;
     actualizarResultadoSimple();
     actualizarTotal();
 });
 
 moduloExtraordinario.addEventListener('change', (e) => {
-    valorModuloExtraordinario = e.target.value || 0;
-    actualizarResultadoExtraordinario();
-})
-
-serviciosExtraordinarios.addEventListener('change', (e) => {
-    cantidadServiciosExtraordinarios = e.target.value || 0;
+    valorModuloExtraordinario = Number(e.target.value) || 0;
     actualizarResultadoExtraordinario();
     actualizarTotal();
 });
+
+serviciosExtraordinarios.addEventListener('change', (e) => {
+    cantidadServiciosExtraordinarios = Number(e.target.value) || 0;
+    actualizarResultadoExtraordinario();
+    actualizarTotal();
+});
+
+// Mostrar los valores iniciales al cargar la página
+actualizarTotal();
 
