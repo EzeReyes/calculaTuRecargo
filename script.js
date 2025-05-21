@@ -21,32 +21,62 @@ const sumar = (a, b) => a + b;
 
 const actualizarResultadoSimple = () => {
     const total = multiplicar(valorModuloSimple, cantidadServiciosSimple);
+
+    let mensaje = '';
+
+    if(cantidadServiciosSimple === 1) {
+        mensaje = `1 Servicio Simple realizado, suma $${total}.`;
+    } else if (cantidadServiciosSimple > 1) {
+        mensaje = `${cantidadServiciosSimple} Servicios Simples realizados, suman ${total}.`
+    } else {
+        mensaje = `No existen Servicios Simples realizados.`;
+    }
+
     modSRealizados.innerHTML = `
-        <p>${cantidadServiciosSimple} Servicios Simples realizados, suman $${total}</p>
-    `;
+        <p>${mensaje}</p>`;
     return total;
 };
 
 const actualizarResultadoExtraordinario = () => {
     const total = multiplicar(valorModuloExtraordinario, cantidadServiciosExtraordinarios);
+
+    let mensaje = '';
+
+    if(cantidadServiciosExtraordinarios === 1) {
+        mensaje = `1 Servicio Extraordinario realizado, suma $${total}.`;
+    } else if (cantidadServiciosExtraordinarios > 1) {
+        mensaje = `${cantidadServiciosExtraordinarios} Servicios Extraordinarios realizados, suman ${total}.`
+    } else {
+        mensaje = `No existen Servicios Extraordinarios realizados.`;
+    }
+
     modERealizados.innerHTML = `
-        <p>${cantidadServiciosExtraordinarios} Servicios Extraordinarios realizados, suman $${total}</p>
-    `;
+        <p>${mensaje}</p>`;
     return total;
 };
 
 const actualizarResultadoAdicional = () => {
-    const total = multiplicar(valorAdicional, cantidadServiciosAdicionales);
-    adicionalesRealizados.innerHTML = `
-        <p>${cantidadServiciosAdicionales} Adicionales realizados, suman $${total}</p>
-    `;
-    return total;
+  const total = multiplicar(valorAdicional, cantidadServiciosAdicionales);
+
+  let mensaje = '';
+
+  if (cantidadServiciosAdicionales === 1) {
+    mensaje = `1 Adicional realizado, suma $${total}`;
+  } else if (cantidadServiciosAdicionales > 1) {
+    mensaje = `${cantidadServiciosAdicionales} Adicionales realizados, suman $${total}.`;
+  } else {
+    mensaje = `Sin adicionales realizados.`;
+  }
+
+  adicionalesRealizados.innerHTML = `<p>${mensaje}</p>`;
+  return total;
 };
+
 
 const actualizarTotal = () => {
     const totalito = sumar(actualizarResultadoSimple(), actualizarResultadoExtraordinario());
     total.innerHTML = `
-        <p>Total a cobrar $${totalito}</p>
+        <p>Total a cobrar $${totalito}.</p>
     `;
 };
 
@@ -87,5 +117,6 @@ serviciosAdicionales.addEventListener('change', (e) => {
 
 
 // Mostrar los valores iniciales al cargar la página
+actualizarResultadoAdicional();
 actualizarTotal();
 
