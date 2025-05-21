@@ -7,38 +7,63 @@
     <title>REGARGUITOS</title>
 </head>
 <body>
-    <h1 class="titulo">Calculadora de recargos</h1>
+    <h1 class="titulo">Calcula tus Recargos y Adicionales</h1>
     <section class="section">
+        <h3>RECARGOS</h3>
     <div class="div">
-        <p>
-            Ingresa los valores de los modulos
-        </p>
         <div>        
-            <label>
-                Modulo Simple:
-            </label>
-            <input id="modulo-simple" value=10948 placeholder="Ingrese el valor de un modulo simple" type="number" title="modulo siple">
+                Ingresa tu jerarquía:
+                <select id="select-mod-simple">
+                    <option value="10201">MARINERO</option>
+                    <option value="10531">CABO SEGUNDO</option>
+                    <option value="10948">CABO PRIMERO</option>
+                    <option value="11197">AYUDANTE DE TERCERA</option>
+                    <option value="11532">AYUDANTE DE SEGUNDA</option>
+                    <option value="11869">AYUDANTE DE PRIMERA</option>
+                    <option value="12801">AYUDANTE PRINCIPAL</option>
+                    <option value="14509">AYUDANTE MAYOR</option>
+                    <option value="10909">OFICIAL AYUDANTE</option>
+                    <option value="11247">OFICIAL AUXILIAR</option>
+                    <option value="11587">OFICIAL PRINCIPAL</option>
+                    <option value="12557">SUBPREFECTO</option>
+                    <option value="14413">PREFECTO</option>
+                    <option value="16855">PREFECTO PRINCIPAL</option>
+                    <option value="23889">PREFECTO MAYOR</option>
+                    <option value="26066">PREFECTO GENERAL</option>
+                </select>
         </div>
         <div>
             <label>
-                Modulo Extraordinario:
-            </label>
-            <input id="modulo-extra" value=21896 placeholder="Ingrese el valor de un modulo simple" type="number" title="modulo extraordinario">
-        </div>
-    </div>
-    <div class="div">
-        <p>
-            Ingresa la cantidad de servicios.
-        </p>
-        <div>
-            <label>
-                Servicios de Modulo Simple:
+                Ingresa los Servicios de Modulo Simple:
             </label>
             <input id="servicios-modulo-simple" placeholder="Ingrese la cantidad de servicios" type="number" title="servicios-modulo siple">
         </div>
+    </div>
+    <div class="div">
+        <div>
+                Ingresa tu jerarquía:
+                <select id="select-mod-ext">
+                    <option value="20403">MARINERO</option>
+                    <option value="21063">CABO SEGUNDO</option>
+                    <option value="21896">CABO PRIMERO</option>
+                    <option value="22394">AYUDANTE DE TERCERA</option>
+                    <option value="23064">AYUDANTE DE SEGUNDA</option>
+                    <option value="23738">AYUDANTE DE PRIMERA</option>
+                    <option value="25602">AYUDANTE PRINCIPAL</option>
+                    <option value="29019">AYUDANTE MAYOR</option>
+                    <option value="21818">OFICIAL AYUDANTE</option>
+                    <option value="22495">OFICIAL AUXILIAR</option>
+                    <option value="23175">OFICIAL PRINCIPAL</option>
+                    <option value="25114">SUBPREFECTO</option>
+                    <option value="28827">PREFECTO</option>
+                    <option value="33710">PREFECTO PRINCIPAL</option>
+                    <option value="47779">PREFECTO MAYOR</option>
+                    <option value="52132">PREFECTO GENERAL</option>
+                </select>
+        </div>
         <div>
             <label>
-                Servicios de Modulo Extraordinario:
+                Ingresa los Servicios de Modulo Extraordinario:
             </label>
             <input id="servicios-modulo-extra" placeholder="Ingrese la cantidad de servicios" type="number" title="-servicios-modulo extraordinario">
         </div>
@@ -52,7 +77,40 @@
         <div class="total">
         </div>
     </section>
-    <footer class="titulo">By Ezequiel Reyes</footer>
+
+    <hr>
+
+    <section class="section">
+        <h3>
+            ADICIONALES
+        </h3>
+        <div class="div">
+            <div>
+                <label>
+                    Valor del adicional (Si el valor está desactualizado lo puedes modificar a tu gusto):
+                </label>
+                <input id="adicional" value=55000 placeholder="Ingrese el valor de un adicional" type="number" title="adicional">
+            </div>
+        </div>
+        <div class="div">
+        <p>
+            Ingresa la cantidad de servicios.
+        </p>
+        <div>
+            <input id="servicios-adicional" placeholder="Ingrese la cantidad de servicios" type="number" title="servicios-adicional">
+        </div>
+    </section>
+    <section class="section">
+        <div class="adicionales-realizados">
+        </div>
+        <div class="total">
+        </div>
+    </section>
+
+
+
+
+    <footer class="titulo">By Ezequiel Reyes - 2025</footer>
     <script src="./script.js"></script>
 </body>
 </html>

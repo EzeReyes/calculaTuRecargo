@@ -1,40 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
 }
 
 body {
-        background: radial-gradient(circle, bisque, darkslateblue);
+  background: linear-gradient(135deg, #f5f5f5, #e0e0e0);
+  color: #333;
+  line-height: 1.6;
 }
 
 .section {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    padding: 30px;
-    gap: 50px;
-    margin: 20px;
-    font-size: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  gap: 60px;
+  margin: 40px auto;
+  font-size: 18px;
+  max-width: 1200px;
 }
 
 .titulo {
-    text-align: center;
-    padding: 50px;
+  text-align: center;
+  padding: 40px 20px;
+  font-size: 32px;
+  color: #c9a14a; /* Dorado */
+  font-weight: 600;
+  border-bottom: 2px solid #c9a14a;
+  margin-bottom: 20px;
 }
 
-@media (min-width: 344px) and (max-width: 650px) {
+.div {
+  font-size: 16px;
+  padding: 20px;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  max-width: 500px;
+  border-left: 5px solid #d4af37; /* Acento dorado */
+}
 
-    .section {
-        flex-direction: column;
-    }
+@media (max-width: 650px) {
+  .section {
+    flex-direction: column;
+    padding: 20px;
+    gap: 30px;
+  }
 
-    .div {
-        font-size: 20px;
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-    }
+  .div {
+    font-size: 16px;
+    width: 100%;
+  }
 
+  .titulo {
+    font-size: 28px;
+  }
 }
